@@ -1,5 +1,5 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 3,
   "name": "WhatAppChater",
   "short_name": "Chater",
   "description": "start a new chat in whatsapp by selected phone number",
@@ -9,7 +9,10 @@
     "contextMenus", 
     "tabs"],
   "icons": {
-    "16": "assets/whatsapp.jpeg"
+    "16": "assets/whatsapp_16.png",
+    "32": "assets/whatsapp_32.png",
+    "48": "assets/whatsapp_48.png",
+    "128": "assets/whatsapp_128.png"
   },
-  "background": {"page": "background.html"}
+  "background": {"service_worker": "main.js"}
 }

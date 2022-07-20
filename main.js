@@ -1,14 +1,16 @@
-startNewChat = function(word){
-  var query = word.selectionText;
-  if (!query.startsWith("+972"))
-  {
-    query.replace("0", "+972");
-  }
-  chrome.tabs.create({url: "https://wa.me/" + query});
-};
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    id: "StartNewChat",
+    title: "Start New Chat",
+    type: "normal",
+    contexts:["selection"]
+    });
+});
 
-chrome.contextMenus.create({
-  title: "Search in Wikipedia",
-  contexts:["selection"],
-  onclick: startNewChat
+chrome.contextMenus.onClicked.addListener(
+    (info) => {
+      let number = encodeURIComponent(info.selectionText)
+
+    chrome.tabs.create({url: "https://wa.me/" + number
+  });
 });
