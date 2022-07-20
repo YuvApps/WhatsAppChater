@@ -1,0 +1,15 @@
+{
+  "manifest_version": 1,
+  "name": "WhatAppChater",
+  "short_name": "Chater",
+  "description": "start a new chat in whatsapp by selected phone number",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "contextMenus", 
+    "tabs"],
+  "icons": {
+    "16": "assets/whatsapp.jpeg"
+  },
+  "background": {"page": "background.html"}
+}
